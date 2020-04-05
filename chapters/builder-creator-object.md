@@ -1,8 +1,8 @@
 ## Considere o uso de um objeto criador quando se deparar com muitos parâmetros de construção. 
 
-Os métodos de fabricação estáticos compartilham uma limitação: eles não funcionam bem com grandes quantidades de parâmetros opcionais. Considere o caso de uma classe representando o rótulo Nutrition Facts (informações nutricionais) que aparece em alimentos empacotados. Esses rótulos têm alguns campos obrigatórios - tamanho da porção, porção por embalagem, gordura saturada, gordura trans, colesterol, sódio e assim por diante. A maioria dos produtos tem valores diferentes de zero em apenas alguns desses campos opcionais. 
+Os métodos de fabricação estáticos compartilham uma limitação: eles não funcionam bem com grandes quantidades de parâmetros opcionais. Considere o caso de uma classe representando o rótulo *Nutrition Facts* (informações nutricionais) que aparece em alimentos empacotados. Esses rótulos têm alguns campos obrigatórios - tamanho da porção, porção por embalagem, gordura saturada, gordura trans, colesterol, sódio e assim por diante. A maioria dos produtos tem valores diferentes de zero em apenas alguns desses campos opcionais. 
 
-Que tipo de construtores ou métodos de fabricação estáticos você pode criar para uma classe assim? Normalmente, os programadores usavam o padrão *construtor telescópico*, em que era fornecido um construtor apenas os parâmetros obrigatórios, outro com um único parâmetro opcional, um terceiro com dois parâmetros opcionais e assim por diante, culminando em um construtor com todos os parâmetros opcionais. Veja comi isso é feito na prática. A título de concisão, só quatro campos são mostrados: 
+Que tipo de construtores ou métodos de fabricação estáticos você pode criar para uma classe assim? Normalmente, os programadores usavam o padrão ***construtor telescópico***, em que era fornecido um construtor apenas os parâmetros obrigatórios, outro com um único parâmetro opcional, um terceiro com dois parâmetros opcionais e assim por diante, culminando em um construtor com todos os parâmetros opcionais. Veja como isso é feito na prática. A título de concisão, só quatro campos são mostrados: 
 
 ```java
 // Construtores Teléscopicos - Não funcionam bem em grande escala!!!
@@ -41,4 +41,10 @@ public class NutritionFacts {
         this.carbohydrate = carbohydrate;
     }
 }
+```
+
+Quando quiser criar uma instância, use o construtor com a lista de parâmetros curta contendo todos os parâmetros que você deseja definir: 
+
+```java
+NutritionFacts cocaCola = new NutritionFacts(240, 8, 100, 0, 35, 27);
 ```
