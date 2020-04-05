@@ -48,3 +48,8 @@ Quando quiser criar uma instância, use o construtor com a lista de parâmetros 
 ```java
 NutritionFacts cocaCola = new NutritionFacts(240, 8, 100, 0, 35, 27);
 ```
+
+### Exemplos de código completos
+* [`NutritionFacts.java` - Padrão Construtor Teléscópico](https://github.com/eduardowgmendes/effective-java/blob/master/sources/chapter_one/item_two/NutritionFacts.java#L1)
+* [`NutritionFacts2.java` - Padrão JavaBeans](https://github.com/eduardowgmendes/effective-java/blob/master/sources/chapter_one/item_two/NutritionFacts2.java#L4)
+* [`NutritionFacts3.java` - Padrão Builder](https://github.com/eduardowgmendes/effective-java/blob/master/sources/chapter_one/item_two/NutritionFacts3.java#L3)
